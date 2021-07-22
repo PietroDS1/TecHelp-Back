@@ -1,0 +1,48 @@
+create database db_projetointegrador;
+use  db_projetointegrador;
+
+CREATE TABLE `Postagem` (
+	`id` bigint NOT NULL AUTO_INCREMENT,
+	`Cursos` varchar(255) NOT NULL,
+	`Categoria` varchar(255) NOT NULL,
+	`Descrição` varchar(255) NOT NULL,
+	`Fórum` bool(255) NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Tema` (
+	`id` bigint NOT NULL AUTO_INCREMENT,
+	`Front-End` varchar(255) NOT NULL,
+	`Back-End` varchar(255) NOT NULL,
+	`Full Stack` varchar(255) NOT NULL,
+	`Banco de Dados` varchar(255) NOT NULL,
+	`Básico` varchar(255) NOT NULL
+	primary key (id),
+	tema_id bigint,
+	foreign key (tema_id) references Postagem (id)
+);
+
+CREATE TABLE `Usuário` (
+	`id` bigint NOT NULL AUTO_INCREMENT,
+	`Nome Completo` varchar(255) NOT NULL,
+	`E-mail` varchar(255) NOT NULL,
+	`Senha` varchar(255) NOT NULL,
+	primary key (id),
+	usuario_id bigint,
+	foreign key (usuario_id) references Postagem (id)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
