@@ -25,7 +25,7 @@ public class Postagem {
 	
 	@NotBlank
 	@Size(min = 5, max = 50)
-	private String categoria; //iniciante, intermediario ou avançado.
+	private String nivel; //iniciante, intermediario ou avançado.
 	
 	@NotBlank
 	@Size(min = 5, max = 1000)
@@ -59,12 +59,12 @@ public class Postagem {
 		this.curso = curso;
 	}
 
-	public String getCategoria() {
-		return categoria;
+	public String getNivel() {
+		return nivel;
 	}
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
 	}
 
 	public String getDescricao() {
