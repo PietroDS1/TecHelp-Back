@@ -15,33 +15,32 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table( name = "tb_usuario")
+@Table(name = "tb_usuario")
 public class Usuario {
-	
+
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotBlank
 	@Size(min = 5, max = 50)
 	private String nomeCompleto;
-	
+
 	@NotBlank
 	@Size(min = 5, max = 100)
 	private String email;
-	
+
 	@NotBlank
 	@Size(min = 8, max = 20)
 	private String senha;
-	
+
 	private boolean Adm;
-	
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
-	private List<Postagem>postagens;
+	private List<Postagem> postagens;
 
-	//----------------------------------ENCAPSULAMENTO------------------------------------
+	// ----------------------------------ENCAPSULAMENTO------------------------------------
 
 	public long getId() {
 		return id;
@@ -74,7 +73,7 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 	public boolean isAdm() {
 		return Adm;
 	}
@@ -88,8 +87,7 @@ public class Usuario {
 	}
 
 	public void setPostagens(List<Postagem> postagens) {
-		this.postagens = postagens;	
+		this.postagens = postagens;
 	}
-	
-	
+
 }
