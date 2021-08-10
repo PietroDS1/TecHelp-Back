@@ -18,6 +18,7 @@ public class UsuarioService{
 	private UsuarioRepository repositoty;
 
 	public Usuario CadastraNomeCompleto(Usuario nomeCompleto) {
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String senhaEncoder = encoder.encode(nomeCompleto.getSenha());
 		nomeCompleto.setSenha(senhaEncoder);
@@ -26,10 +27,10 @@ public class UsuarioService{
 
 	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> nomeCompleto = repositoty.findByEmail(user.get().getUsuario());
+		Optional<Usuario> nomeCompleto = repositoty.pegarPorEmail(user.get().getUsuario());
 		if (nomeCompleto.isPresent()) {
 			if (encoder.matches(user.get().getSenha(), nomeCompleto.get().getSenha())) {
-				String auth = user.get().getUsuario() + " : " + user.get().getSenha();
+				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodeAuth);
 				user.get().setToken(authHeader);
