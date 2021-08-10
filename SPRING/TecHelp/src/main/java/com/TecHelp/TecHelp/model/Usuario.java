@@ -31,7 +31,7 @@ public class Usuario {
 	private String email;
 
 	@NotBlank
-	@Size(min = 8, max = 20)
+	@Size(min = 8)
 	private String senha;
 
 	private boolean Adm;
