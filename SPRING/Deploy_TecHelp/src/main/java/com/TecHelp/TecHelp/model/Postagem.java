@@ -20,7 +20,7 @@ public class Postagem {
 	private long id;
 	
 	@NotBlank
-	@Size( min = 5, max = 500)
+	@Size( min = 1, max = 500)
 	private String curso;
 	
 	@NotBlank
@@ -30,6 +30,9 @@ public class Postagem {
 	@NotBlank
 	@Size(min = 5, max = 1000)
 	private String descricao;
+	
+	@NotBlank
+	private String link;
 	
 	private String imagem;
 	
@@ -77,6 +80,14 @@ public class Postagem {
 		this.descricao = descricao;
 	}
 	
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
 	public String getImagem() {
 		return imagem;
 	}

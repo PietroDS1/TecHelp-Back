@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\lucas\OneDrive\Área de Trabalho\Projeto-Integrador-Grupo-2\SPRING\Deploy_TecHelp"/>
 			<item value="C:\Users\lucas\OneDrive\Área de Trabalho\Projeto-Integrador-Grupo-2\SPRING\TecHelp"/>
 		</list>
 		<list key="projectNameTemplate">

@@ -28,6 +28,13 @@ public class Tema {
 	@Size(min = 5, max = 255)
 	private String tipo; // logica, front end, back end, banco de dados, fullstacks
 	
+	@NotNull
+	private String imagem;
+	
+	@NotNull
+	@Size(min = 5, max = 1000)
+	private String descricao;
+	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem>postagens;
@@ -49,6 +56,23 @@ public class Tema {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
 	public List<Postagem> getPostagens() {
 		return postagens;
 	}
@@ -56,6 +80,11 @@ public class Tema {
 	public void setPostagens(List<Postagem> postagens) {
 		this.postagens = postagens;
 	}
+
+	
+	
+	
+	
 
 	
 }
