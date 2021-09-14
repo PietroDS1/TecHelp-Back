@@ -55,7 +55,7 @@ public class ForumController {
 			return ResponseEntity.ok(repository.findAllByPublicacaoContainingIgnoreCase(publicacao));
 		}
 		
-		@PostMapping("/adm/{adm}")
+		@PostMapping
 		public ResponseEntity<Forum> Post (@RequestBody Forum forum){
 			return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(forum));
 		}
